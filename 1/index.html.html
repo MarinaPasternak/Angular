@@ -1,0 +1,17 @@
+<!DOCTYPE html >
+<html >
+    <head>
+        <meta charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+        <script src='app.js'></script>
+        <title>LunchCheck</title>
+    </head>
+    <body ng-app='LunchCheck'>
+        <h1>How much does you eat?</h1>
+        <div ng-controller='LunchCheckController'>
+            <input type='text' ng-model='listFood'>
+            <button  ng-click='displayMassage();'>Check</button><br>
+            My answer is:{{Massege}}
+        </div>
+    </body>
+</html>
