@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html ng-app='NarrowItDownApp'>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src='app.js'></script> 
+        <title>NarrowItDownApp</title>
+    </head>
+    <body >
+        <div ng-controller='NarrowItDownController as menu'>
+            <h3>List of Menu Categories</h3>
+            <input type='text' ng-model="menu.searchTerm" placeholder="search">
+            <button ng-click='menu.showItems();'>Narrow It Down For Me!</button>
+            <h3>{{menu.massage}}</h3>
+            <ul>
+                <li ng-repeat="category in menu.categories">
+                    ({{ category.short_name }})<br>
+                    {{ category.name }}<br>
+                    {{category.special_instructions}} <br>
+                    <button ng-click='menu.delItems($index);'>Don't want this one!</button>
+                  </li>
+            </ul>
+
+        </div>
+
+        
+    </body>
+</html>
