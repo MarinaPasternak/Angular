@@ -16,7 +16,7 @@
                 <li ng-repeat="category in menu.categories">
                     ({{ category.short_name }})<br>
                     {{ category.name }}<br>
-                    {{category.special_instructions}} <br>
+                    {{category.description}} <br>
                     <button ng-click='menu.delItems($index);'>Don't want this one!</button>
                   </li>
             </ul>

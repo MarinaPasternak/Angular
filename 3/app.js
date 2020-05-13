@@ -33,7 +33,7 @@
         {
             let response = $http({
                 method: "GET",
-                url: (ApiBasePath + "/categories.json")
+                url: (ApiBasePath + "/menu_items.json")
               });
           
             return response;
@@ -42,8 +42,8 @@
 
         let promise = getList();
         promise.then(function (response) {
-           arr =response.data;
-           console.log(arr);
+           arr =response.data['menu_items'];
+           
         })
         .catch(function (error) {
             console.log("Something went terribly wrong.");
@@ -53,13 +53,13 @@
         {
             findArr=[];
             let regEx=new RegExp(searchTerm);
-            
+            console.log(arr);
             console.log(searchTerm);
             for(let i=0;i<arr.length;i++)
             {
-                if(arr[i]['name'].match(regEx) || arr[i]['special_instructions'].match(regEx))
+                if(arr[i]['name'].match(regEx) || arr[i]['description'].match(regEx))
                     {
-                        console.log(arr[i]['name'].match(regEx)+"----"+arr[i]['special_instructions'].match(regEx))
+                        console.log(arr[i]['name'].match(regEx)+"----"+arr[i]['description'].match(regEx))
                         findArr.push(arr[i])
                     }
                     
